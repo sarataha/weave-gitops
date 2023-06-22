@@ -11,7 +11,7 @@ on:
 jobs:
   trigger-enterprise-workflow:
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request' && github.event.pull_request.merged == true
+   # if: github.event_name == 'pull_request' && github.event.pull_request.merged == true
     steps:
       - name: Trigger Workflow
         uses: peter-evans/repository-dispatch@v1
@@ -19,4 +19,3 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           repository: weaveworks/weave-gitops-enterprise
           event-type: create-pr
-
